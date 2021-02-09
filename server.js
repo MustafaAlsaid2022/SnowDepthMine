@@ -8,7 +8,7 @@ require('dotenv').config()
 // Express Route
 const sensorRoutes = require('./routes/sensor.route')
 const viewRoutes = require('./routes/view.route')
-// const adminRoutes = require('./routes/admin.route')
+const adminRoutes = require('./routes/admin.route')
 
 
 const app = express();
@@ -20,12 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 app.use('/sensors', sensorRoutes)
 app.use('/view', viewRoutes)
-// app.use('/users', adminRoutes)
-app.use('/login', (req, res) => {
-  res.send({
-    token: 'test123'
-  });
-});
+app.use('/users', adminRoutes)
 
 
 // PORT

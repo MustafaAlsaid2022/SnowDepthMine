@@ -67,10 +67,10 @@ function App() {
               <Switch>
                 <Route exact path='/' component={View} />
                 <Route exact path="/edit-sensor/:id" component={EditSensor} />
-                <ProtectedRoute exact path="/sensors-list" component={SensorsList} />
-                {/* <Route exact path="/login" component={Login} /> */}
-                <Route exact path="/login"
-                 component={() => <Login onLoginSuccess={handleLogin} />} />
+                <Route exact path="/sensors-list" component={SensorsList} />
+                <Route exact path="/login" component={Login} />
+                {/* <Route exact path="/login"
+                 component={() => <Login onLoginSuccess={handleLogin} />} /> */}
                 {/* <Route exact path="/add-sensor" component={AddSensor} /> */}
               </Switch>
             </div>

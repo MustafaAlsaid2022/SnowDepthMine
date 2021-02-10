@@ -63,7 +63,7 @@ async function getTheNewestData() {
                 .fetchAll();
             if (items.length) {
                 arr.push(items[0])
-                arr[i].Id = sensors[i].id
+                arr[i].Id = sensors[i].id;
                 arr[i].Name = sensors[i].name
                 arr[i].Type = sensors[i].type
                 arr[i].SnowDepthLimit = sensors[i].snowDepthLimit

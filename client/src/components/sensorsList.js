@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
@@ -37,27 +37,8 @@ class SensorsList extends Component {
   }
 
 
-  componentDidUpdate() {
-    fetch("/sensors")
-      .then(res => res.json())
-      .then(
-        (sensorList) => {
-          this.setState({
-            isLoaded: true,
-            sensors: sensorList
-          });
-        },
-        
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
-
-
+  // DataTable() {
+  // DataTable() {
   // DataTable() {
   //   return this.state.sensors.map((res, i) => {
   //     return <sensorTableRow obj={res} key={i} />;
@@ -78,7 +59,11 @@ class SensorsList extends Component {
   }
 
   render() {
+    const {userLoggedIn} = this.props;
     const { error, isLoaded, sensors } = this.state;
+    if(userLoggedIn === 'false') {
+      return <Redirect to="/" />
+    }
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {

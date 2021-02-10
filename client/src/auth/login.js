@@ -2,9 +2,11 @@ import React from 'react'
 import {useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 axios.defaults.withCredentials = true;
  const Login = () => {
+   const [cookies, setCookie] = useCookies(['userLoggedIn']);
      
     let history = useHistory();
     const[user , setUser] = useState({
@@ -36,21 +38,25 @@ axios.defaults.withCredentials = true;
             console.log(response.config.data);          
             setmessageObject(response.data);
             
-            if(response.status === 202)  history.push("/sensors-list");
+            if(response.status === 202)  {
+              setCookie('userLoggedIn', true);
+              history.push("/sensors-list");
+            }
             
           })
         .catch(function (error) {
+          setCookie('userLoggedIn', false);
             console.log(error);
           });
           
           //
     };
     
-    var someStyle = {
+    const someStyle = {
         width: "30em",
        
     };
-    var someStyle1 = {
+    const someStyle1 = {
         color: "red"
       }
     return (
@@ -62,7 +68,7 @@ axios.defaults.withCredentials = true;
             
             <form onSubmit = {e => onSubmit(e)}>
                 <div className="form-group">
-                <label for="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <input 
                 style={someStyle}
                 value={email} 
@@ -70,7 +76,7 @@ axios.defaults.withCredentials = true;
                 type="email" className="form-control" name="email" placeholder="Enter email" />
                 </div>
                 <div className="form-group">
-                <label for="pwd">Password:</label>
+                <label htmlFor="pwd">Password:</label>
                 <input
                 style={someStyle}
                 value={password} 

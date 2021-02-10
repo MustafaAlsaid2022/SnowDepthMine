@@ -21,14 +21,15 @@ const logIn = async (req, res) => {
     if (error) return res.send({ message: error.details[0].message });
     const myEmail = req.body.email;
     const myPassword = req.body.password;
+    console.log('xxxx')
 
-    const user = await admins.find(user => user.email == myEmail)
+    const user = await admins.find(user => user.email === myEmail)
     // console.log(user)
 
     if (user) {
         try {
             //
-            if (myPassword == user.password) {
+            if (myPassword === user.password) {
                 
 
                 const maxAge = 3 * 24 * 60 * 60;
@@ -60,21 +61,10 @@ const logIn = async (req, res) => {
 
 
 const logOut = async (req,res)=>{
-    //console.log('okkkkkk')
    // res.status(202).clearCookie('jwtoken');
-   windows.alert('ok clear cookies')
     //res.send({message:"cookie has bee initialised"})
-    res.status(202).cookie('jwtoken' , '' ,{
-        path: '/' ,
-        sameSite:'strict' ,
-        httpOnly : true,
-       // secure:true ,
-       // expires : new Date(new Date().getTime() + 30 * 1000),
-        maxAge : 1000 ,
-
-    });
-
-    
+    res.status(202).clearCookie('jwtoken' );
+    res.sendStatus(200);
  
     //res.cookie('jwtoken' ,'', {maxAge:1 });
    // res.redirect('/'),
@@ -84,4 +74,4 @@ const logOut = async (req,res)=>{
  }
 
 
-module.exports = { logIn }
+module.exports = { logIn, logOut }

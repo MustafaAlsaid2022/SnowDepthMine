@@ -1,6 +1,5 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import {withCookies} from 'react-cookie';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -13,52 +12,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EditSensor from "./components/editSensor";
 import SensorsList from "./components/sensorsList";
 import View from "./components/view";
-import Login from "./components/login";
+import Login from "./auth/login";
+import Navigation from './components/navigation';
 import ProtectedRoute from './components/protectedRoute'
+import axios from "axios";
 
-const handleLogin = async(prop) => {
-       
-       console.log(prop)
-    
-}
 
-function App() {
+function App(props) {
+
+  const userLoggedIn = props.allCookies.userLoggedIn;
   return (<Router>
     <div className="App">
-      <header className="App-header">
-        <Navbar bg="dark" variant="dark">
-          <Container>
-
-            <Navbar.Brand>
-              <Link to={"/"} className="nav-link">
-                Sensors Data
-              </Link>
-            </Navbar.Brand>
-
-            <Nav className="justify-content-end">
-              {/* <Nav>
-                <Link to={"/add-sensor"} className="nav-link">
-                  Add Sensor
-                </Link>
-              </Nav> */}
-
-              <Nav>
-                <Link to={"/sensors-list"} className="nav-link">
-                  Sensors List
-                </Link>
-              </Nav>
-
-              <Nav>
-                <Link to={"/login"} className="nav-link">
-                  Login
-                </Link>
-              </Nav>
-
-            </Nav>
-
-          </Container>
-        </Navbar>
-      </header>
+      <Navigation userLoggedIn={userLoggedIn}/>
 
       <Container>
         <Row>
@@ -67,7 +32,7 @@ function App() {
               <Switch>
                 <Route exact path='/' component={View} />
                 <Route exact path="/edit-sensor/:id" component={EditSensor} />
-                <Route exact path="/sensors-list" component={SensorsList} />
+                <Route exact path="/sensors-list"  render={() => (<SensorsList userLoggedIn={props.allCookies.userLoggedIn}/>)} />
                 <Route exact path="/login" component={Login} />
                 {/* <Route exact path="/login"
                  component={() => <Login onLoginSuccess={handleLogin} />} /> */}
@@ -81,4 +46,4 @@ function App() {
   </Router>);
 }
 
-export default App
+export default withCookies(App);

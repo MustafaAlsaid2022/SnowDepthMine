@@ -105,6 +105,7 @@ export default class EditSensor extends Component {
         .then((res) => {
           console.log(res)
           console.log('Sensor successfully updated')
+          this.props.history.push('/sensors-list')
         }).catch((error) => {
           console.log(error)
         })

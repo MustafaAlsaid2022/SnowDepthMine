@@ -118,8 +118,7 @@ export default class EditSensor extends Component {
         //   console.log(error)
         // })
 
-      // Redirect to Sensor List 
-      this.props.history.push('/sensors-list')
+      // Redirect to Sensor List
       e.preventDefault()
     } catch {
       this.setState({ message: 'Error: Sensor is not Updated' })

@@ -7,8 +7,4 @@ const config = {
     containerId: "sensor-data",
   };
   
-  
-  
-  
-  module.exports = config;
-  
+module.exports = config;

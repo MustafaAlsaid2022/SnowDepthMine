@@ -91,8 +91,8 @@ class SensorsList extends Component {
                   <tr key={item.id}>
                     <td>{item.name}</td>
               <td>{item.type}</td>
-              <td>{item.snowDepthLimit}</td>
-              <td>{item.baseValue}</td>
+              <td>{item?.snowDepthLimit || '-'}</td>
+              <td>{item?.baseValue || '-'}</td>
               <td>{item.comment}</td>
               <td>{item.adminStatus}</td>
               

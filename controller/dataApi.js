@@ -7,7 +7,7 @@ let data = []
 const getData = (req, res) => {
     getTheNewestData().then(result =>{
         data = result
-        // console.log(data)
+        console.log('req',data)
       })
       res.status(200).json(data)
       }

@@ -20,7 +20,7 @@ return data
 
 
 const rule = new schedule.RecurrenceRule();
-rule.minutes = 20
+rule.hour = 1
 const intMail = schedule.scheduleJob(rule, async function(){
     let data = await getData()
    
@@ -29,6 +29,7 @@ const intMail = schedule.scheduleJob(rule, async function(){
             check (sensor.id).then(bool =>{
              
                 if(bool) sendEmail(data[sensor.id].Name, data[sensor.id].SnowDepth, data[sensor.id].ReportedAt )
+                // if(bool) sendEmail(data[sensor.id].Name, data[sensor.id].SnowDepth, "data[sensor.id].ReportedAt" )
               })
         }
         else

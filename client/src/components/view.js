@@ -92,6 +92,8 @@ class View extends Component {
                   <tr key={item.Id}>
                       {item.Status === 'Opened' &&
                       <td className = 'opened'>{item.Status}</td>}
+                       {item.Status === 'Warning' &&
+                      <td className = 'warning'>{item.Status}</td>}
                        {item.Status === 'Closed' &&
                       <td className = 'closed'>{item.Status}</td>}
                     <td>{item.Name}</td>

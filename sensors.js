@@ -1,5 +1,6 @@
 let sensorList = [
-    {
+
+  {
     "id": "5f6c96d273643300063d4a0f",
     "name": "Sportfältet Teleborg",
     "type": "Konstgräs",
@@ -22,7 +23,7 @@ let sensorList = [
       },
 
     {
-    "id": "5f76db9f73643300067f92c5",
+    "id": "600fea1c0e013f00061a474c",
     "name": "Arenastaden",
     "type": "Konstgräs",
     "snowDepthLimit": "20",
@@ -31,67 +32,74 @@ let sensorList = [
     "adminStatus": ""
     },
     {
-      "id": "5fbfb68650006daf014",
+      "id": "600fea1c0e013f00061a474c",
       "name": "Norremark",
       "type": "Konstgräs",
       "snowDepthLimit": "20",
       "baseValue": "3063",
       "comment": "Norremark",
       "adminStatus": ""
-      },
+    },
   {
-    "id": "5fbfbfc464750006daf014",
+    "id": "620fea1c0e013f00061a474c",
     "name": "Araby konstgräs",
     "type": "Konstgräs",
+    "snowDepthLimit": "",
+    "baseValue": "",
     "comment": "Araby",
     "adminStatus": ""
   },
   {
-    "id": "5fb5c30788e750006daf014",
+    "id": "610fea1c0e013f00061a474c",
     "name": "Fabraback konstgräs",
     "type": "Konstgräs",
-    "comment": "Fabraback",
+    "snowDepthLimit": "",
+    "baseValue": "",
+    "comment": "Fabraback konstgräs",
     "adminStatus": ""
   },
   {
-    "id": "5fbfbfc344e750006daf014",
+    "id": "500fea1c0e013f00061a474c",
     "name": "Gransholm konstgräs",
     "type": "Konstgräs",
+    "snowDepthLimit": "",
+    "baseValue": "",
     "comment": "Gransholm",
     "adminStatus": ""
   },
   {
-    "id": "5fbc8888e750006daf014",
-    "name": "Norremark konstgräs",
-    "type": "Konstgräs",
-    "comment": "Norremark",
-    "adminStatus": ""
-  },
-  {
-    "id": "5f888d38e750006daf014",
+    "id": "400fea1c0e013f00061a474c",
     "name": "Spotfältet (11 mot 11) konstgräs",
     "type": "Konstgräs",
+    "snowDepthLimit": "",
+    "baseValue": "",
     "comment": "Spotfaltet",
     "adminStatus": ""
   },
   {
-    "id": "5fbcf666e750006daf014",
+    "id": "300fea1c0e013f00061a474c",
     "name": "Tiphallln (7 mot 17) konstgräs",
     "type": "Konstgräs",
+    "snowDepthLimit": "",
+    "baseValue": "",
     "comment": "Tiphallln",
     "adminStatus": ""
   },
   {
-    "id": "5fbcfc30dr38e750006daf014",
+    "id": "200fea1c0e013f00061a474c",
     "name": "Tiphallln",
     "type": "Konstgräs",
+    "snowDepthLimit": "",
+    "baseValue": "",
     "comment": "Tiphallln",
     "adminStatus": ""
   },
   {
-    "id": "5fbcfc30eed38e750006daf014",
+    "id": "100fea1c0e013f00061a474c",
     "name": "Varendsvallen (C-plan) konstgräs",
     "type": "Konstgräs",
+    "snowDepthLimit": "",
+    "baseValue": "",
     "comment": "Varendsvallen",
     "adminStatus": ""
   },

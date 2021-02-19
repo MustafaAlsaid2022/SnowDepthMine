@@ -1,26 +1,24 @@
 require('dotenv').config();
 const users = process.env.USERS;
-const adminsList = require('../admins');
+// const adminsList = require('../admins');
 const { loginValidation } = require('../validation');
 const jwt =require('jsonwebtoken');
 
-// we can use data from env file -> string file and transform in JSON or we can use from admin file array
 
-
-// const admins = JSON.parse(users).map(user => {
-//     return {
-//         ...user,
-//         name: "admin",
-//     }
-// });
-
-// direct from admin file
-const admins = adminsList.map(user => {
+const admins = JSON.parse(users).map(user => {
     return {
         ...user,
         name: "admin",
     }
 });
+
+
+// const admins = adminsList.map(user => {
+//     return {
+//         ...user,
+//         name: "admin",
+//     }
+// });
 
 const logIn = async (req, res) => {
     // console.log(req.body)

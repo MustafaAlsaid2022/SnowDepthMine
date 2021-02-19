@@ -57,11 +57,13 @@ const updateSensor = async (req, res) => {
 
         let items = await getTheNewestData()
         let dict = {}
-
         items.forEach(item => dict[item.Id] = item)
+        let sensorListItems = sensorList
+        let sensorDict = {}
+        sensorListItems.forEach(sensorListItem => sensorDict[sensorListItem.Id] = sensorListItem)
 
-        let found = sensorList.find(function (item) {
-            return item.id === req.params.id
+        let found = sensorList.find(function (sensorListItem) {
+            return sensorListItem.id === req.params.id
         });
         let updated = {}
 

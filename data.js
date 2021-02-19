@@ -61,7 +61,29 @@ async function getTheNewestData() {
             const { resources: items } = await container.items
                 .query(querySpec)
                 .fetchAll();
-            if (items.length) {
+                
+             if(!items.length){
+                obj = {
+                   'Distance': '3008',
+                   'Temperature': '-',
+                    ReportedAt: "2021-02-19T09:30:08.445Z"
+                 }
+
+                arr.push(obj)
+                arr[i].Id = sensors[i].id;
+                arr[i].Name = sensors[i].name
+                arr[i].Type = sensors[i].type
+                arr[i].SnowDepthLimit = sensors[i].snowDepthLimit
+                arr[i].BaseValue = sensors[i].baseValue
+                arr[i].Comment = sensors[i].comment
+                arr[i].SnowDepth = "-"
+                arr[i].Status = "Opened"
+                arr[i].AdminStatus = sensors[i].adminStatus
+                if (sensors[i].adminStatus)
+                    arr[i].Status = sensors[i].adminStatus
+             } 
+           
+            else if(items.length == 1) {
                 arr.push(items[0])
                 arr[i].Id = sensors[i].id;
                 arr[i].Name = sensors[i].name
@@ -73,16 +95,16 @@ async function getTheNewestData() {
                 if (arr[i].SnowDepth < 0 || arr[i].SnowDepth < 5 ) arr[i].SnowDepth = 0
                 else
                 arr[i].SnowDepth = arr[i].SnowDepth - (arr[i].SnowDepth % 5)
-                arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Closed' : arr[i].Status = 'Opened'
+                arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Warning' : arr[i].Status = 'Opened'
                 arr[i].AdminStatus = sensors[i].adminStatus
                 if (sensors[i].adminStatus)
                     arr[i].Status = sensors[i].adminStatus
                 else
-                    arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Closed' : arr[i].Status = 'Opened'
+                    arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Warning' : arr[i].Status = 'Opened'
             }
-            else
-                continue
+            
         }
+        // console.log(arr)
         return arr
 
     } catch (err) {

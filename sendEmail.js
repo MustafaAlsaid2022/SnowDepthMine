@@ -20,7 +20,7 @@ return data
 
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 1
+rule.minute = 30
 const intMail = schedule.scheduleJob(rule, async function(){
     let data = await getData()
    
@@ -57,8 +57,8 @@ const sendEmail = (name, snowDepth, time) => {
   
     const mailOptions = {
       from: '"sensor" <snowdepthnow@gmail.com>', // sender address
-      // to: "Roger.Lonnblad@vaxjo.se,peter.bengtsson@vaxjo.se,Andreas.Ineang@vaxjo.se",
-      to: "Mustafa.Alsaid@vaxjo.se", 
+      to: "Roger.Lonnblad@vaxjo.se,peter.bengtsson@vaxjo.se,Andreas.Ineang@vaxjo.se"
+      +"Jonas.Andersson@wexnet.se, Oscar.lonnerheden@vaxjo.se",
       subject: "Sensor Status", // Subject line
       html: `<p>Hej</p>
               

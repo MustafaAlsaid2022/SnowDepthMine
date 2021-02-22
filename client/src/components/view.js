@@ -83,18 +83,21 @@ class View extends Component {
             <th>Idrottsplats</th>
             <th>Plan</th>
             <th>Snödjup</th>
-            <th>Comment</th>
-            <th>Temperature</th>
+            <th>Kommentar</th>
+            <th>Temperatur</th>
             </tr>
           </thead>
           <tbody>
           {view.map(item => (
                   <tr key={item.Id}>
-                      {item.Status === 'Opened' &&
+                     {(item.Status !== 'Öppen' && item.Status !== 'Stängd'  && item.Status !== 'Varning' )
+                      &&
+                      <td className = 'opened'>{"Unknown"}</td>}
+                      {item.Status === 'Öppen' &&
                       <td className = 'opened'>{item.Status}</td>}
-                       {item.Status === 'Warning' &&
+                       {item.Status === 'Varning' &&
                       <td className = 'warning'>{item.Status}</td>}
-                       {item.Status === 'Closed' &&
+                       {item.Status === 'Stängd' &&
                       <td className = 'closed'>{item.Status}</td>}
                     <td>{item.Name}</td>
               <td>{item.Type}</td>

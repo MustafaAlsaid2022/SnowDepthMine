@@ -1,20 +1,8 @@
 let sensorList = [
 
-  {
-    "id": "5f6c96d273643300063d4a0f",
-    "name": "Sportfältet Teleborg",
-    "type": "Konstgräs",
-    "snowDepthLimit": "20",
-    "baseValue": "3008",
-    "comment": "sportfältet",
-    "adminStatus": ""
-    },
-
-  
-
-    {
+{
       "id": "600fea1c0e013f00061a474c",
-      "name": "Nya Sportfältet Teleborg ",
+      "name": "Sportfältet Teleborg ",
       "type": "Konstgräs",
       "snowDepthLimit": "20",
       "baseValue": "3008",
@@ -51,11 +39,11 @@ let sensorList = [
   },
   {
     "id": "610fea1c0e013f00061a474c",
-    "name": "Fabraback konstgräs",
+    "name": "Fagrabäck konstgräs",
     "type": "Konstgräs",
     "snowDepthLimit": "",
     "baseValue": "",
-    "comment": "Fabraback konstgräs",
+    "comment": "Fagrabäck konstgräs",
     "adminStatus": ""
   },
   {
@@ -69,38 +57,38 @@ let sensorList = [
   },
   {
     "id": "400fea1c0e013f00061a474c",
-    "name": "Spotfältet (11 mot 11) konstgräs",
+    "name": "Sportfältet (11 mot 11) konstgräs",
     "type": "Konstgräs",
     "snowDepthLimit": "",
     "baseValue": "",
-    "comment": "Spotfaltet",
+    "comment": "Sportfältet (11 mot 11) konstgräs",
     "adminStatus": ""
   },
   {
     "id": "300fea1c0e013f00061a474c",
-    "name": "Tiphallln (7 mot 17) konstgräs",
+    "name": "Tipshallen (7 mot 17) konstgräs",
     "type": "Konstgräs",
     "snowDepthLimit": "",
     "baseValue": "",
-    "comment": "Tiphallln",
+    "comment": "Tipshallen (7 mot 17) konstgräs",
     "adminStatus": ""
   },
   {
     "id": "200fea1c0e013f00061a474c",
-    "name": "Tiphallln",
+    "name": "Tipshallen",
     "type": "Konstgräs",
     "snowDepthLimit": "",
     "baseValue": "",
-    "comment": "Tiphallln",
+    "comment": "Tipshallen",
     "adminStatus": ""
   },
   {
     "id": "100fea1c0e013f00061a474c",
-    "name": "Varendsvallen (C-plan) konstgräs",
+    "name": "Värendsvallen (C-plan) konstgräs",
     "type": "Konstgräs",
     "snowDepthLimit": "",
     "baseValue": "",
-    "comment": "Varendsvallen",
+    "comment": "Värendsvallen (C-plan) konstgräs",
     "adminStatus": ""
   },
     ]

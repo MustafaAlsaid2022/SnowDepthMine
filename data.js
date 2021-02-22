@@ -77,7 +77,7 @@ async function getTheNewestData() {
                 arr[i].BaseValue = sensors[i].baseValue
                 arr[i].Comment = sensors[i].comment
                 arr[i].SnowDepth = "-"
-                arr[i].Status = "Opened"
+                arr[i].Status = "Öppen"
                 arr[i].AdminStatus = sensors[i].adminStatus
                 if (sensors[i].adminStatus)
                     arr[i].Status = sensors[i].adminStatus
@@ -95,12 +95,12 @@ async function getTheNewestData() {
                 if (arr[i].SnowDepth < 0 || arr[i].SnowDepth < 5 ) arr[i].SnowDepth = 0
                 else
                 arr[i].SnowDepth = arr[i].SnowDepth - (arr[i].SnowDepth % 5)
-                arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Warning' : arr[i].Status = 'Opened'
+                arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Varning' : arr[i].Status = 'Öppen'
                 arr[i].AdminStatus = sensors[i].adminStatus
                 if (sensors[i].adminStatus)
                     arr[i].Status = sensors[i].adminStatus
                 else
-                    arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Warning' : arr[i].Status = 'Opened'
+                    arr[i].SnowDepth >= arr[i].SnowDepthLimit ? arr[i].Status = 'Varning' : arr[i].Status = 'Öppen'
             }
             
         }

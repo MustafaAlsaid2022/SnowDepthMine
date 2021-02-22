@@ -133,25 +133,7 @@ export default class EditSensor extends Component {
        <h2 className='text-center mb-4'>Update Sensor</h2>
       {this.state.message && <Alert variant='danger'>{this.state.message}</Alert>}
       <Form onSubmit={this.onSubmit}>
-        {/* <Form.Group controlId="Name">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" value={this.state.name} onChange={this.onChangeSensorName} required />
-        </Form.Group>
-
-        <Form.Group controlId="Type">
-          <Form.Label>Type</Form.Label>
-          <Form.Control type="text" value={this.state.type} onChange={this.onChangeSensorType} required />
-        </Form.Group> */}
-
-        {/* <Form.Group controlId="SnowDepthLimit">
-          <Form.Label>SnowDepthLimit</Form.Label>
-          <Form.Control type="text" value={this.state.snowDepthLimit} onChange={this.onChangeSensorSnowDepthLimit} required />
-        </Form.Group>
-
-        <Form.Group controlId="BaseValue">
-          <Form.Label>BaseValue</Form.Label>
-          <Form.Control type="text" value={this.state.baseValue} onChange={this.onChangeSensorBaseValue} required />
-        </Form.Group> */}
+      
 
         <Form.Group controlId="Comment">
           <Form.Label>Comment</Form.Label>
@@ -162,8 +144,8 @@ export default class EditSensor extends Component {
           <Form.Label>Status</Form.Label>
           <Form.Control as="select" value={this.state.adminStatus} onChange={this.onChangeSensorAdminStatus}>
           <option></option>
-          <option>Opened</option>
-          <option>Closed</option>
+          <option>Öppen</option>
+          <option>Stängd</option>
             </Form.Control> 
         </Form.Group>
 

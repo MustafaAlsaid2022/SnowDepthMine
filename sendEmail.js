@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer')
 const schedule = require('node-schedule')
 const sensors = require("./sensors");
 const { getTheNewestData, check } = require('./data')
+const emails = process.env.EMAILS;
 
 
 const getData = async () => {
@@ -40,7 +41,9 @@ const intMail = schedule.scheduleJob(rule, async function(){
 
 const sendEmail = (name, snowDepth, time) => {
 
-    const transport = nodemailer.createTransport({
+
+  const email = 'Mustafa.Alsaid@vaxjo.se' 
+  const transport = nodemailer.createTransport({
       service: "gmail",
       port: 587,
       secure: false, // true for 465, false for other ports
@@ -57,8 +60,7 @@ const sendEmail = (name, snowDepth, time) => {
   
     const mailOptions = {
       from: '"sensor" <snowdepthnow@gmail.com>', // sender address
-      to: "Roger.Lonnblad@vaxjo.se,peter.bengtsson@vaxjo.se,Andreas.Ineang@vaxjo.se"
-      +"Jonas.Andersson@wexnet.se, Oscar.lonnerheden@vaxjo.se",
+      to: emails,
       subject: "Sensor Status", // Subject line
       html: `<p>Hej</p>
               

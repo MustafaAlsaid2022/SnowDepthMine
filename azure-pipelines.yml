@@ -34,7 +34,7 @@ steps:
     rootFolderOrFile: '$(uiBuild)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/fontend.zip'
     replaceExistingArchive: true
 
 # Backend archive an publish
@@ -43,7 +43,7 @@ steps:
     rootFolderOrFile: '$(webApi)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)api.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/api.zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1

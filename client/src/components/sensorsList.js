@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
+import config from '../config.json';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
 
@@ -17,7 +18,14 @@ class SensorsList extends Component {
 
   
   componentDidMount() {
+<<<<<<< HEAD
+    console.log("Environment: " + process.env.NODE_ENV);
+    let url = process.env.NODE_ENV === 'development' ? config.server.dev : config.server.prod;
+    console.log("The server url: " + url);
+    fetch(url + "/sensors")
+=======
     fetch(process.env.SERVER_URL + "/sensors")
+>>>>>>> e73b02984f1426974157601dcf2af453bb1f4d8c
       .then(res => res.json())
       .then(
         (sensorList) => {

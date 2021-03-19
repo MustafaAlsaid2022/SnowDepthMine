@@ -51,3 +51,13 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'DiAccess (bfa42e49-3648-411f-a40e-581cb5787c44)'
+    appType: 'webApp'
+    appName: 'snow-depth-app'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
+
+    

@@ -9,6 +9,7 @@ trigger:
 variables:
   webUi: 'client'
   uiBuild: '$(webUi)/build'
+  webApi: 'api'
   apiBuild: 'build'
 
 pool:
@@ -21,9 +22,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm run build
-
     pushd $(webUi)
     npm install
     npm run build
@@ -34,24 +32,18 @@ steps:
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(uiBuild)'
-    includeRootFolder: true
+    includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-    
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(uiBuild)/$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
 
 # Backend archive an publish
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(apiBuild)'
+    rootFolderOrFile: '$(webApi)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)api.zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1

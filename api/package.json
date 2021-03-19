@@ -8,7 +8,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Mustafa Alsaid",
+  "author": "Digitala Labbet",
   "license": "ISC",
   "dependencies": {
     "@azure/cosmos": "^3.5.2",

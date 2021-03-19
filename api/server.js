@@ -21,6 +21,9 @@ app.use(cors());
 app.use('/sensors', sensorRoutes)
 app.use('/view', viewRoutes)
 app.use('/users', adminRoutes)
+app.get('/', (req, res) => {
+  res.send('Server is up and running.');
+})
 
 
 // PORT

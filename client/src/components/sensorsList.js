@@ -17,7 +17,7 @@ class SensorsList extends Component {
 
   
   componentDidMount() {
-    fetch("/sensors")
+    fetch(process.env.SERVER_URL + "/sensors")
       .then(res => res.json())
       .then(
         (sensorList) => {

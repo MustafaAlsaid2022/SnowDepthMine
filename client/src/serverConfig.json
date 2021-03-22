@@ -1,6 +1,6 @@
 {
     "server": {
         "dev": "http://localhost:4000",
-        "prod": "https://snow-depth-backend.azurewebsites.net"
+        "prod": "https://snow-depth-backend-linux.azurewebsites.net"
     }
 }

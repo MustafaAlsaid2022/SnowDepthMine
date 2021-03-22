@@ -3,7 +3,6 @@ import {useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import config from '../serverConfig.json';
 
 axios.defaults.withCredentials = true;
  const Login = () => {

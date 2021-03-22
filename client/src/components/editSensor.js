@@ -32,8 +32,7 @@ export default class EditSensor extends Component {
 
   componentDidMount() {
     // console.log(this.props)
-    axios.get('/sensors/' + this.props.match.params.id)
-
+    axios.get(`${process.env.REACT_APP_API_URL}/sensors/` + this.props.match.params.id)
       .then(res => {
         console.log(res.data)
         this.setState({

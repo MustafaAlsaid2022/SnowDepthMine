@@ -28,6 +28,11 @@ steps:
     popd
   displayName: 'npm install and build'
 
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '$(webApi)'
+
 # Frontend archive an publish
 - task: ArchiveFiles@2
   inputs:

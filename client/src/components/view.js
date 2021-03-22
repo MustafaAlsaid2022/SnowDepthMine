@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import {Link} from 'react-router-dom'
 import axios from 'axios';
-import config from '../config.json';
+import config from '../serverConfig.json';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
 
@@ -18,8 +18,7 @@ class View extends Component {
 
   
   componentDidMount() {
-    console.log("Environment: " + process.env.NODE_ENV);
-    let url = process.env.NODE_ENV === 'development' ? config.server.dev : config.server.prod;
+    let url = config.server.prod;
     console.log("The server url: " + url);
     fetch(url + "/view")
       .then(res => res.json())

@@ -10,6 +10,11 @@ const sensorRoutes = require('./routes/sensor.route')
 const viewRoutes = require('./routes/view.route')
 const adminRoutes = require('./routes/admin.route')
 
+var corsOptions = {
+  origin: 'https://snow-depth-app.azurewebsites.net',
+  optionsSuccessStatus: 200, // For legacy browser support
+  methods: "GET, PUT"
+}
 
 const app = express();
 app.use(cookieParser())
@@ -17,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(cors({ origin: 'https://snow-depth-app.azurewebsites.net/' }));
+app.use(cors(corsOptions));
 app.use('/sensors', sensorRoutes)
 app.use('/view', viewRoutes)
 app.use('/users', adminRoutes)

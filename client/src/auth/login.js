@@ -33,7 +33,7 @@ axios.defaults.withCredentials = true;
     
     const onSubmit = async (event) => {
         event.preventDefault();
-        await axios.post(config.server.prod + "/users/login", user)    
+        await axios.post(config.server.prod + "/users/login", user)
         .then(function (response) {
             // handle success   
             console.log(response.config.data);          

@@ -7,7 +7,7 @@ const {auth} = require('../verifyToken')
 
 // router.post('/', addSensor)
 
-router.get('/', getSensors)
+router.get('/',auth, getSensors)
 
 router.get('/:id',auth, getOneSensor)
 

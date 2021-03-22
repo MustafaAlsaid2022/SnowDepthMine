@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
-import config from '../serverConfig.json';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
 
@@ -18,7 +17,7 @@ class SensorsList extends Component {
 
   
   componentDidMount() {
-    fetch(config.server.prod + "/sensors")
+    fetch(`${process.env.REACT_APP_API_URL}/sensors`)
       .then(res => res.json())
       .then(
         (sensorList) => {

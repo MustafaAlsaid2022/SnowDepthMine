@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import {Link} from 'react-router-dom'
 import axios from 'axios';
-import config from '../serverConfig.json';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
 
@@ -18,16 +17,7 @@ class View extends Component {
 
   
   componentDidMount() {
-    let url = config.server.prod;
-    console.log("The server url: " + url);
-    try {
-      console.log("The environment: ", process.env.NODE_ENV);
-      console.log("The API url: ", process.env.REACT_APP_API_URL);
-    } catch (err) {
-      console.log("Error when fetching environment variables", err);
-    }
-    
-    fetch(url + "/view")
+    fetch(`${process.env.REACT_APP_API_URL}/view`)
       .then(res => res.json())
       .then(
         (data) => {

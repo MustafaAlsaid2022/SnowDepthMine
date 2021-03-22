@@ -7,14 +7,12 @@ const {auth} = require('../verifyToken')
 
 // router.post('/', addSensor)
 
-router.get('/', getSensors)
+router.get('/',auth, getSensors)
 
 router.get('/:id',auth, getOneSensor)
 
 router.put('/:id', auth, updateSensor)
 
 router.delete('/:id', auth,  deleteSensor)
-
-
 
 module.exports = router;

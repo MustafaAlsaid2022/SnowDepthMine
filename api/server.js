@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-// app.use(cors());
+app.use(cors({ origin: 'https://snow-depth-app.azurewebsites.net/' }));
 app.use('/sensors', sensorRoutes)
 app.use('/view', viewRoutes)
 app.use('/users', adminRoutes)

@@ -3,6 +3,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import config from '../serverConfig.json';
 
 axios.defaults.withCredentials = true;
  const Login = () => {
@@ -32,7 +33,7 @@ axios.defaults.withCredentials = true;
     
     const onSubmit = async (event) => {
         event.preventDefault();
-        await  axios.post("/users/login",user)    
+        await axios.post(config.server.prod + "/users/login", user)    
         .then(function (response) {
             // handle success   
             console.log(response.config.data);          

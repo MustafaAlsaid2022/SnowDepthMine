@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
+import config from '../serverConfig.json';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
 
@@ -17,7 +18,7 @@ class SensorsList extends Component {
 
   
   componentDidMount() {
-    fetch("/sensors")
+    fetch(config.server.prod + "/sensors")
       .then(res => res.json())
       .then(
         (sensorList) => {

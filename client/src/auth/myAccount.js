@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useCookies, withCookies} from 'react-cookie';
 import "bootstrap/dist/css/bootstrap.css";
+import config from '../serverConfig.json';
 
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -14,7 +15,7 @@ function MyAccount(props) {
   }, [props?.userLoggedIn]) // T
 
   const handleLogOut = async() => {
-    await  axios.get("/users/logout", '')
+    await  axios.get(config.server.prod + "/users/logout", '')
       .then(response => {
         setCookie('userLoggedIn', false);
       }).catch(function (error) {

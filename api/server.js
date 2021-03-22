@@ -11,7 +11,7 @@ const viewRoutes = require('./routes/view.route')
 const adminRoutes = require('./routes/admin.route')
 
 var corsOptions = {
-  origin: 'https://snow-depth-app.azurewebsites.net',
+  origin: 'https://snow-depth-ui.azurewebsites.net',
   optionsSuccessStatus: 200, // For legacy browser support
   methods: "GET, PUT"
 }

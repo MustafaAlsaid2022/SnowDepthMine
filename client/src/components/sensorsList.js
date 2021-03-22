@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
-import config from '../config.json';
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
 

@@ -1,12 +1,13 @@
 import React from 'react'
 import {useState} from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
-import { useCookies } from 'react-cookie';
+import {useHistory, Redirect} from 'react-router-dom';
+import {useCookies, withCookies} from 'react-cookie';
 
 axios.defaults.withCredentials = true;
- const Login = () => {
+ const Login = (props) => {
    const [cookies, setCookie] = useCookies(['userLoggedIn']);
+   const userLoggedIn = props.allCookies.userLoggedIn;
      
     let history = useHistory();
     const[user , setUser] = useState({
@@ -32,7 +33,7 @@ axios.defaults.withCredentials = true;
     
     const onSubmit = async (event) => {
         event.preventDefault();
-        await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, user)
+        await  axios.post(`${process.env.REACT_APP_API_URL}/users/login`, user)   
         .then(function (response) {
             // handle success   
             console.log(response.config.data);          
@@ -59,6 +60,9 @@ axios.defaults.withCredentials = true;
     const someStyle1 = {
         color: "red"
       }
+   if(userLoggedIn === 'true') {
+     return <Redirect to="/" />
+   }
     return (
         <>
         <h2 style = {{textAlign:'center'}}>Log In</h2>
@@ -91,4 +95,4 @@ axios.defaults.withCredentials = true;
         </>
     )
 }
-export default Login
+export default withCookies(Login);

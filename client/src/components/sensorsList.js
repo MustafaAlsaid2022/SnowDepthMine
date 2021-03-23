@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
+import {withCookies} from "react-cookie";
 // import Table from 'react-bootstrap/Table';
 // import sensorTableRow from './sensorTableRow';
+
 
 class SensorsList extends Component {
   constructor(props) {
@@ -14,25 +16,27 @@ class SensorsList extends Component {
     };
   }
 
-  
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_API_URL}/sensors`)
-      .then(res => res.json())
-      .then(
-        (sensorList) => {
-          this.setState({
-            isLoaded: true,
-            sensors: sensorList
-          });
-        },
-        
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
+    const userLoggedIn = this.props.allCookies.userLoggedIn;
+    if(userLoggedIn === 'true') {
+      fetch(`${process.env.REACT_APP_API_URL}/sensors`)
+        .then(res => res.json())
+        .then(
+          (sensorList) => {
+            this.setState({
+              isLoaded: true,
+              sensors: sensorList
+            });
+          },
+
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
+    }
   }
 
 
@@ -58,9 +62,9 @@ class SensorsList extends Component {
   }
 
   render() {
-    const {userLoggedIn} = this.props;
+    const userLoggedIn = this.props.allCookies.userLoggedIn;
     const { error, isLoaded, sensors } = this.state;
-    if(userLoggedIn === 'false') {
+    if(!userLoggedIn || userLoggedIn === 'false') {
       return <Redirect to="/" />
     }
     if (error) {
@@ -123,4 +127,4 @@ class SensorsList extends Component {
  
 
 
-export default SensorsList;
+export default withCookies(SensorsList);

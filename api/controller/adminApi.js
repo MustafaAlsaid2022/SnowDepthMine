@@ -39,7 +39,8 @@ const logIn = async (req, res) => {
                 const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
                 res.status(202).cookie('jwtoken', accessToken, {
                     path: '/',
-                    sameSite: 'strict',
+                    sameSite: 'none',
+                    secure: true,
                     httpOnly: true,
                     maxAge: maxAge * 1000,
 

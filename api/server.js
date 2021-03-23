@@ -13,7 +13,7 @@ const adminRoutes = require('./routes/admin.route')
 var corsOptions = {
   origin: process.env.UI_URL,
   optionsSuccessStatus: 200, // For legacy browser support
-  methods: "GET, PUT"
+  methods: "GET, PUT, POST"
 }
 
 const app = express();

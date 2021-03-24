@@ -5,26 +5,26 @@ let sensorList = [
       "name": "Sportfältet Teleborg ",
       "type": "Konstgräs",
       "snowDepthLimit": "20",
-      "baseValue": "3008",
+      "baseValue": "33016",
       "comment": "sportfältet",
       "adminStatus": ""
       },
 
     {
-    "id": "600fea1c0e013f00061a474c",
+    "id": "6042252bb3b4d10006286eeb",
     "name": "Arenastaden",
     "type": "Konstgräs",
     "snowDepthLimit": "20",
-    "baseValue": "3062",
+    "baseValue": "2975",
     "comment": "Arenastaden",
     "adminStatus": ""
     },
     {
-      "id": "600fea1c0e013f00061a474c",
+      "id": "60422541b3b4d10006286f10",
       "name": "Norremark",
       "type": "Konstgräs",
       "snowDepthLimit": "20",
-      "baseValue": "3063",
+      "baseValue": "3058",
       "comment": "Norremark",
       "adminStatus": ""
     },

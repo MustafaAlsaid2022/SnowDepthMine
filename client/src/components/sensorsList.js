@@ -19,7 +19,9 @@ class SensorsList extends Component {
   componentDidMount() {
     const userLoggedIn = this.props.allCookies.userLoggedIn;
     if(userLoggedIn === 'true') {
-      fetch(`${process.env.REACT_APP_API_URL}/sensors`)
+      fetch(`${process.env.REACT_APP_API_URL}/sensors`, {
+        credentials: 'include'
+      })
         .then(res => res.json())
         .then(
           (sensorList) => {

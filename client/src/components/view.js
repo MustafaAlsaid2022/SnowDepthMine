@@ -21,7 +21,7 @@ class View extends Component {
       .then(res => res.json())
       .then(
         (data) => {
-            console.log(data)
+           
           this.setState({
             isLoaded: true,
             view: data,

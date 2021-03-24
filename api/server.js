@@ -15,8 +15,6 @@ var corsOptions = {
   optionsSuccessStatus: 200, // For legacy browser support
   methods: "GET, PUT, POST",
   credentials: true
-  
-  
 }
 
 const app = express();

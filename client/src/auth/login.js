@@ -35,8 +35,7 @@ axios.defaults.withCredentials = true;
         event.preventDefault();
         await  axios.post(`${process.env.REACT_APP_API_URL}/users/login`, user)   
         .then(function (response) {
-            // handle success   
-            console.log(response.config.data);          
+            // handle success          
             setmessageObject(response.data);
             
             if(response.status === 202)  {

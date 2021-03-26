@@ -10,12 +10,15 @@ const sensorRoutes = require('./routes/sensor.route')
 const viewRoutes = require('./routes/view.route')
 const adminRoutes = require('./routes/admin.route')
 
-var corsOptions = {
+let corsOptions = {
   origin: process.env.UI_URL,
   optionsSuccessStatus: 200, // For legacy browser support
   methods: "GET, PUT, POST",
   credentials: true
 }
+
+if(process.env.NODE_ENV === 'development')
+corsOptions.origin= process.env.UI_URL_DEV 
 
 const app = express();
 app.use(cookieParser())
@@ -24,13 +27,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// app.use(function (request, response, next) {
-//   response.header("Access-Control-Allow-Origin", "*");
-//   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
 app.use(cors(corsOptions));
-// app.use(cors({credentials: true, origin: 'http://localhost:4000'}));
 app.use('/sensors', sensorRoutes)
 app.use('/view', viewRoutes)
 app.use('/users', adminRoutes)

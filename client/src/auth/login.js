@@ -29,8 +29,6 @@ axios.defaults.withCredentials = true;
         setUser({...user,[e.target.name] : e.target.value})
     };
 
-    
-    
     const onSubmit = async (event) => {
         event.preventDefault();
         await  axios.post(`${process.env.REACT_APP_API_URL}/users/login`, user)   
@@ -49,7 +47,6 @@ axios.defaults.withCredentials = true;
             console.log(error);
           });
           
-          //
     };
     
     const someStyle = {

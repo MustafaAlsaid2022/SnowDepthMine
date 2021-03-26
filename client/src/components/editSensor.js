@@ -109,23 +109,13 @@ export default class EditSensor extends Component {
           console.log(error)
         })
 
-        // axios.post('/view/sendEmail/' + this.props.match.params.id, item)
-        // .then((res) => {
-        //   console.log(res)
-        //   console.log('Send email')
-        // }).catch((error) => {
-        //   console.log(error)
-        // })
-
       // Redirect to Sensor List
       e.preventDefault()
     } catch {
       this.setState({ message: 'Error: Sensor is not Updated' })
     }
     this.setState({ loading: false })
-
   }
-
 
   render() {
     return (<div className="form-wrapper">

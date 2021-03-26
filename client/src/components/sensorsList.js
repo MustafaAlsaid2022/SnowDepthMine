@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios';
 import {withCookies} from "react-cookie";
-// import Table from 'react-bootstrap/Table';
-// import sensorTableRow from './sensorTableRow';
+
 
 
 class SensorsList extends Component {
@@ -41,14 +40,6 @@ class SensorsList extends Component {
     }
   }
 
-
-  // DataTable() {
-  // DataTable() {
-  // DataTable() {
-  //   return this.state.sensors.map((res, i) => {
-  //     return <sensorTableRow obj={res} key={i} />;
-  //   });
-  // }
 
   deleteSensor(id, e){
     axios.delete(`/sensors/${id}`)

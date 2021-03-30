@@ -11,7 +11,7 @@ function MyAccount(props) {
   const [loggedIn, setLoggedIn] = useState(props?.userLoggedIn);
   useEffect(() => {
       setLoggedIn(props?.userLoggedIn)
-  }, [props?.userLoggedIn]) // T
+  }, [props?.userLoggedIn]) 
 
   const handleLogOut = async() => {
     await  axios.get(`${process.env.REACT_APP_API_URL}/users/logout`, '')

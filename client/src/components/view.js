@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-// import {Link} from 'react-router-dom'
-import axios from 'axios';
-// import Table from 'react-bootstrap/Table';
-// import sensorTableRow from './sensorTableRow';
 
 
 class View extends Component {
@@ -21,7 +17,7 @@ class View extends Component {
       .then(res => res.json())
       .then(
         (data) => {
-            console.log(data)
+           
           this.setState({
             isLoaded: true,
             view: data,
@@ -38,31 +34,7 @@ class View extends Component {
       )
   }
 
-  // componentDidUpdate() {
-  //   fetch("/view")
-  //     .then(res => res.json())
-  //     .then(
-  //       (data) => {
-  //           console.log(data)
-            
-  //         this.setState({
-  //           isLoaded: true,
-  //           view: data,
-            
-  //         });
-  //       },
-        
-  //       (error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         });
-  //       }
-  //     )
-  // }
-
- 
-
+  
   render() {
     const { error, isLoaded, view } = this.state;
     if (error) {

@@ -5,7 +5,7 @@ let sensorList = [
       "name": "Sportfältet Teleborg ",
       "type": "Konstgräs",
       "snowDepthLimit": "20",
-      "baseValue": "33016",
+      "baseValue": "3016",
       "comment": "sportfältet",
       "adminStatus": ""
       },

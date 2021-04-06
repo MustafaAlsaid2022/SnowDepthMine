@@ -42,7 +42,7 @@ class SensorsList extends Component {
 
 
   deleteSensor(id, e){
-    axios.delete(`/sensors/${id}`)
+    axios.delete(`${process.env.REACT_APP_API_URL}/sensors/${id}`)
       .then(res => {
         console.log(res.data)
         console.log('Sensor successfully deleted')

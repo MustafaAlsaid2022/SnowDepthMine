@@ -100,7 +100,7 @@ export default class EditSensor extends Component {
         loading: true
       })
 
-      axios.put('/sensors/' + this.props.match.params.id, sensorObject)
+      axios.put(`${process.env.REACT_APP_API_URL}/sensors/`  + this.props.match.params.id, sensorObject)
         .then((res) => {
           console.log(res)
           console.log('Sensor successfully updated')
